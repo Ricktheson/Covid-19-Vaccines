@@ -17,6 +17,40 @@
 </head>
 
 <body>
+<?php
+ if ($_SERVER["REQUEST_METHOD"] == "POST") {
+// collect value of input field
+ $fname = $_POST['fName'];
+                                                       
+$lname = $_POST['lName'];
+$icNo = $_POST['icNo'];
+                                                      
+$phoneNo = $_POST['phoneNo'];
+                                                       
+$vaccines = $_POST['vaccines'];
+                                                      
+$comment = $_POST['comments'];
+$consent = $_POST['consent'];
+
+
+$myfile = fopen("registrationinfo.txt","w");
+//$txt = $fname . "\n" . $lname. "\n" .$icNo. "\n" .$phoneNo."\n" .$vaccines+ "\n" . $comment."\n" .$consent;
+$txt = $fname;
+fwrite($myfile, $txt."\n");
+$txt = $lname;
+fwrite($myfile, $txt."\n");
+$txt = $icNo;
+fwrite($myfile, $txt."\n");
+$txt = $phoneNo;
+fwrite($myfile, $txt."\n");
+$txt = $vaccines;
+fwrite($myfile, $txt."\n");
+$txt = $comment;
+fwrite($myfile, $txt."\n");
+$txt = $consent;
+fwrite($myfile, $txt."\n");
+                                  }
+?>
 <div class="container-fluid site-title">
     <!-- <div class=""> -->
         <div class="container">
@@ -40,21 +74,21 @@
 
                     <li class="nav-item" id="menu1">
                         <a class="nav-link" href="page1.html">
-                            Menu 1						</a>
+                            Pfizer						</a>
                     </li>
 
                     <li class="nav-item" id="menu2">
                         <a class="nav-link" href="page2.html">
-                            Menu 2						</a>
+                            Sinovac						</a>
                     </li>
 
                     <li class="nav-item" id="menu3">
                         <a class="nav-link" href="page3.html">
-                            Menu 3						</a>
+                            AstraZeneca					</a>
                     </li>
 
                     <li class="nav-item" id="menu4">
-                        <a class="nav-link active" href="page4.html">
+                        <a class="nav-link active" href="registration.html">
                             Registration				</a>
                     </li>
 
@@ -83,57 +117,11 @@
                                         <div class="row">
                                             <div class="d-none">
                                                 <div class="text-center">
+                                                    
                                                 </div>
                                             </div>
                                             <div class="col">
-                                                <form action="registration.php">
-                                                    <div class="container">
-                                                        <h1>Register</h1>
-                                                        <p>Please fill out this form to register for the vaccination</p>
-
-                                                        <label for="fName"><b>First Name: </b></label>
-                                                        <input type="text" placeholder="Enter First Name" name="fName" id="fName" required>
-                                                        <br>
-
-                                                        <label for="lName"><b>Last Name: </b></label>
-                                                        <input type="text" placeholder="Enter Last Name" name="lName" id="lName" required>
-                                                        <br>
-
-                                                        <label for="icNo"><b>IC/Passport No: </b></label>
-                                                        <input type="number" placeholder="Enter IC/Passport No:" name="icNo" id="icNo" required>
-                                                        <br>
-
-                                                        <label for="phoneNo"><b>Phone No: </b></label>
-                                                        <input type="number" placeholder="Enter Phone No:" name="phoneNo" id="phoneNo" required>
-                                                        <br>
-
-                                                        <label for="vaccines"><b>Choose a Vaccine</b></label>
-                                                        <select name="vaccines" id="vaccines">
-                                                            <option value="pfizer">Pfizer</option>
-                                                            <option value="sinovac">Sinovac Coronavac</option>
-                                                            <option value="astrazeneca">AstraZeneca</option>
-                                                        </select>
-                                                        <br>
-
-                                                        <label for="comments"><b>Comments:</b></label>
-                                                        <br>
-                                                        <textarea name="comments" id="comments" rows="7" cols="50">
-                                                        Please give any additional information here.
-                                                        </textarea>
-                                                        <hr>
-
-                                                        <p><b>Consent</b></p>
-                                                        <input type="radio" id="self" name="consent" value="self">
-                                                        <label for="self">I am of legal age and have full capacity to give my consent in receiving a vaccine</label><br>
-                                                        <input type="radio" id="representative" name="consent" value="representative">
-                                                        <label for="representative">I am the legal representative of the above-named person. I am registering this form on his/her behalf, as an express consent given by him/her</label><br>
-                                                        <input type="radio" id="guardian" name="consent" value="guardian">
-                                                        <label for="guardian">I am the legal guardian of the above-named person. I am registering this form as an affirmation of giving my consent for his/her benefit</label>
-                                                        
-                                                        <button type="submit" class="registerbtn" value="registration.php">Register</button>
-                                                        <button type="reset">Reset</button>
-                                                    </div>
-                                                </form>
+                                            <p>Registration successful</p>
                                             </div>
                                         </div>
                                     </div>
