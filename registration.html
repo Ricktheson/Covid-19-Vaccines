@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html class="theme-cyan cdc-page-type-content cdc-2020" lang="en-us">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="home_files/bootstrap.css">
+    <link rel="stylesheet" href="home_files/app.css">
+       
+	<title>Home | COVID-19 Info Center</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="COVID-19 vaccine homepage">
+    <meta name="keywords" content="COVID-19, homepage">	
+</head>
+
+<body>
+<div class="container-fluid site-title">
+    <!-- <div class=""> -->
+        <div class="container">
+            <div class="row">
+                <h3>CoVid-19 Vaccines</h3>
+            </div>
+        </div>
+    </div>
+    <div id="cdc-meganav-wrapper">
+        
+        <div class="container" id="cdc-meganav-bar">
+            
+            <nav class="navbar navbar-expand-xl yamm">
+            
+                <ul class="nav navbar-nav nav-justified w-100">
+                  
+                    <li class="nav-item" id="menu_home">
+                        <a class="nav-link" href="home.html">
+                            Home				        </a>
+                    </li>
+
+                    <li class="nav-item" id="menu1">
+                        <a class="nav-link" href="page1.html">
+                            Menu 1						</a>
+                    </li>
+
+                    <li class="nav-item" id="menu2">
+                        <a class="nav-link" href="page2.html">
+                            Menu 2						</a>
+                    </li>
+
+                    <li class="nav-item" id="menu3">
+                        <a class="nav-link" href="page3.html">
+                            Menu 3						</a>
+                    </li>
+
+                    <li class="nav-item" id="menu4">
+                        <a class="nav-link active" href="page4.html">
+                            Registration				</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Page Content Wrap -->
+    <div class="container d-flex flex-wrap body-wrapper bg-white">
+    
+        <!-- Content -->
+        <main class="col-xl-9 order-xl-2">
+            
+            <div class="row">
+            
+                <div class="col content">
+                    <div class="cdc-2020-bar container">							
+                    </div>
+                 
+                    <div class="syndicate">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <div class="card border-0 rounded-0 mb-3">
+                                    <div class="card-body bg-primary">
+                                        <div class="row">
+                                            <div class="d-none">
+                                                <div class="text-center">
+                                                </div>
+                                            </div>
+                                            <div class="col">
+                                                <form action="registration.php" method="POST">
+                                                    <div class="container">
+                                                        <h1>Register</h1>
+                                                        <p>Please fill out this form to register for the vaccination</p>
+
+                                                        <label for="fName"><b>First Name: </b></label>
+                                                        <input type="text" placeholder="Enter First Name" name="fName" id="fName" required>
+                                                        <br>
+
+                                                        <label for="lName"><b>Last Name: </b></label>
+                                                        <input type="text" placeholder="Enter Last Name" name="lName" id="lName" required>
+                                                        <br>
+
+                                                        <label for="icNo"><b>IC/Passport No: </b></label>
+                                                        <input type="number" placeholder="Enter IC/Passport No:" name="icNo" id="icNo" required>
+                                                        <br>
+
+                                                        <label for="phoneNo"><b>Phone No: </b></label>
+                                                        <input type="number" placeholder="Enter Phone No:" name="phoneNo" id="phoneNo" required>
+                                                        <br>
+
+                                                        <label for="vaccines"><b>Choose a Vaccine</b></label>
+                                                        <select name="vaccines" id="vaccines">
+                                                            <option value="pfizer">Pfizer</option>
+                                                            <option value="sinovac">Sinovac Coronavac</option>
+                                                            <option value="astrazeneca">AstraZeneca</option>
+                                                        </select>
+                                                        <br>
+
+                                                        <label for="comments"><b>Comments:</b></label>
+                                                        <br>
+                                                        <textarea name="comments" id="comments" rows="7" cols="50" placeholder="
+                                                        Please give any additional information here.">
+                                                        </textarea>
+                                                        <hr>
+
+                                                        <p><b>Consent</b></p>
+                                                        <input type="radio" id="self" name="consent" value="self">
+                                                        <label for="self">I am of legal age and have full capacity to give my consent in receiving a vaccine</label><br>
+                                                        <input type="radio" id="representative" name="consent" value="representative">
+                                                        <label for="representative">I am the legal representative of the above-named person. I am registering this form on his/her behalf, as an express consent given by him/her</label><br>
+                                                        <input type="radio" id="guardian" name="consent" value="guardian">
+                                                        <label for="guardian">I am the legal guardian of the above-named person. I am registering this form as an affirmation of giving my consent for his/her benefit</label>
+                                                        
+                                                        <button type="submit" class="registerbtn" value="registration.php">Register</button>
+                                                        <button type="reset">Reset</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+							
+          <br>
+          <br>
+          <br>
+     
+        </main>
+    						
+    </div>
+
+    <div class="container-fluid">
+        <div class="container">
+        
+            <div class="card-body bg-quaternary">
+                    
+                <h5>Disclaimer</h5>
+                <p style="font-size:14px;">This website is created mainly for educational and non-commercial use only. It is a 
+                partial fulfillment for completion of unit SWE20001 - Development Project 1 offered in 
+                Swinburne University of Technology, Sarawak Campus. The web-master and author(s) do not 
+                represent the business entity. The content of the pages of this website might be out-dated 
+                or inaccurate, thus, the author(s) and web-master does not take any responsibility for 
+                incorrect information disseminated or cited from this website.</p>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
