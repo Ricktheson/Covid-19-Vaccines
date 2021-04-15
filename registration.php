@@ -123,7 +123,7 @@ fwrite($myfile, $txt."\n");
                                             <div class="col">
                                             <h3>Registration successful!</h3>
 						<p>Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
-						   We will contact you once you are appointed to take the vaccine. Together we can do this.
+						   We will contact you once you are appointed to take the vaccine. Together we can do this.</p>
                                             </div>
                                         </div>
                                     </div>
