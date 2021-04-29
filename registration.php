@@ -31,25 +31,48 @@ $vaccines = $_POST['vaccines'];
                                                       
 $comment = $_POST['comments'];
 $consent = $_POST['consent'];
+                              }
+$file = fopen("registrationinfo.txt","r");
+$array_info = array();
+                                  
+while(! feof($file)) {
+ array_push($array_info,(fgets($file)));
 
+ }
+                      
+fclose($file);
 
-$myfile = fopen("registrationinfo.txt","w");
-//$txt = $fname . "\n" . $lname. "\n" .$icNo. "\n" .$phoneNo."\n" .$vaccines+ "\n" . $comment."\n" .$consent;
-$txt = $fname;
-fwrite($myfile, $txt."\n");
-$txt = $lname;
-fwrite($myfile, $txt."\n");
-$txt = $icNo;
-fwrite($myfile, $txt."\n");
-$txt = $phoneNo;
-fwrite($myfile, $txt."\n");
-$txt = $vaccines;
-fwrite($myfile, $txt."\n");
-$txt = $comment;
-fwrite($myfile, $txt."\n");
-$txt = $consent;
-fwrite($myfile, $txt."\n");
-                                  }
+    $msg = "Registration Successful";
+
+for ($x = 2 ; $x <= sizeof($array_info); $x+=7){
+    
+    if($icNo == $array_info[$x]){
+
+        $msg = "You have already registered, please wait for the vaccine";
+        $msg2 = "You have already registered to take the vaccine. Phases of vaccination are being implemented so please wait for your phase to get vaccinated";
+    }
+    
+    else{
+        $myfile = fopen("registrationinfo.txt","a+");
+        $txt = $fname;
+        fwrite($myfile, $txt."\n");
+        $txt = $lname;
+        fwrite($myfile, $txt."\n");
+        $txt = $icNo;
+        fwrite($myfile, $txt."\n");
+        $txt = $phoneNo;
+        fwrite($myfile, $txt."\n");
+        $txt = $vaccines;
+        fwrite($myfile, $txt."\n");
+        $txt = $comment;
+        fwrite($myfile, $txt."\n");
+        $txt = $consent;
+        fwrite($myfile, $txt."\n");
+        $msg = "Registration successful";
+        $msg2 = "Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
+        We will contact you once you are appointed to take the vaccine. Together we can do this.";
+    }
+}
 ?>
 <div class="container-fluid site-title">
     <!-- <div class=""> -->
@@ -89,7 +112,7 @@ fwrite($myfile, $txt."\n");
 
                     <li class="nav-item" id="menu4">
                         <a class="nav-link active" href="registration.html">
-                            registration</a>
+                            Registration</a>
                     </li>
 
                 </ul>
@@ -121,9 +144,9 @@ fwrite($myfile, $txt."\n");
                                                 </div>
                                             </div>
                                             <div class="col">
-                                             <h3>Registration successful!</h3>
-						<p>Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
-						   We will contact you once you are appointed to take the vaccine. Together we can do this.</p>
+                                             <h3><?php echo $msg ?></h3>
+						<p><?php echo $msg2?></p>
+                          
                                             </div>
                                             </div>
                                         </div>
