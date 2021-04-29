@@ -89,7 +89,7 @@ fwrite($myfile, $txt."\n");
 
                     <li class="nav-item" id="menu4">
                         <a class="nav-link active" href="registration.html">
-                            Registration				</a>
+                            registration</a>
                     </li>
 
                 </ul>
