@@ -4,51 +4,51 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    
+
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="home_files/bootstrap.css">
     <link rel="stylesheet" href="home_files/app.css">
-       
+
     <title>Home | COVID-19 Info Center</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="description" content="COVID-19 vaccine homepage">
-    <meta name="keywords" content="COVID-19, homepage">	
+    <meta name="keywords" content="COVID-19, homepage">
 </head>
 
 <body>
 <?php
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
-// collect value of input field
-$fname = $_POST['fName'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+    $first-name = $_POST['first-name'];
 
-$lname = $_POST['lName'];
-$icNo = $_POST['icNo'];
-                                                      
-$phoneNo = $_POST['phoneNo'];
-                                                       
-$vaccines = $_POST['vaccines'];
-                                                      
-$comment = $_POST['comments'];
-$consent = $_POST['consent'];
+    $last-name = $_POST['last-name'];
+    $ic-number = $_POST['ic-number'];
+
+    $phone-number = $_POST['phone-number'];
+
+    $vaccines = $_POST['vaccines'];
+
+    $comment = $_POST['comments'];
+    $consent = $_POST['consent'];
 
 
-$myfile = fopen("registrationinfo.txt","w");
-//$txt = $fname . "\n" . $lname. "\n" .$icNo. "\n" .$phoneNo."\n" .$vaccines+ "\n" . $comment."\n" .$consent;
-$txt = $fname;
-fwrite($myfile, $txt."\n");
-$txt = $lname;
-fwrite($myfile, $txt."\n");
-$txt = $icNo;
-fwrite($myfile, $txt."\n");
-$txt = $phoneNo;
-fwrite($myfile, $txt."\n");
-$txt = $vaccines;
-fwrite($myfile, $txt."\n");
-$txt = $comment;
-fwrite($myfile, $txt."\n");
-$txt = $consent;
-fwrite($myfile, $txt."\n");
+    $myfile = fopen("registrationinfo.txt","w");
+    //$txt = $first-name . "\n" . $last-name. "\n" .$ic-number. "\n" .$phone-number."\n" .$vaccines+ "\n" . $comment."\n" .$consent;
+    $txt = $first-name;
+    fwrite($myfile, $txt. "\n");
+    $txt = $last-name;
+    fwrite($myfile, $txt. "\n");
+    $txt = $ic-number;
+    fwrite($myfile, $txt. "\n");
+    $txt = $phone-number;
+    fwrite($myfile, $txt. "\n");
+    $txt = $vaccines;
+    fwrite($myfile, $txt. "\n");
+    $txt = $comment;
+    fwrite($myfile, $txt. "\n");
+    $txt = $consent;
+    fwrite($myfile, $txt. "\n");
 }
 ?>
 <div class="container-fluid site-title">
@@ -60,13 +60,13 @@ fwrite($myfile, $txt."\n");
         </div>
     </div>
     <div id="cdc-meganav-wrapper">
-        
+
         <div class="container" id="cdc-meganav-bar">
-            
+
             <nav class="navbar navbar-expand-xl yamm">
-            
+
                 <ul class="nav navbar-nav nav-justified w-100">
-                  
+
                     <li class="nav-item" id="menu-home">
                         <a class="nav-link" href="home.html">
                             Home				        </a>
@@ -99,16 +99,16 @@ fwrite($myfile, $txt."\n");
 
     <!-- Page Content Wrap -->
     <div class="container d-flex flex-wrap body-wrapper bg-white">
-    
+
         <!-- Content -->
         <main class="col-xl-9 order-xl-2">
-            
+
             <div class="row">
-            
+
                 <div class="col content">
-                    <div class="cdc-2020-bar container">							
+                    <div class="cdc-2020-bar container">
                     </div>
-                 
+
                     <div class="syndicate">
                         <div class="row ">
                             <div class="col-md-12">
@@ -117,13 +117,15 @@ fwrite($myfile, $txt."\n");
                                         <div class="row">
                                             <div class="d-none">
                                                 <div class="text-center">
-                                                    
+
                                                 </div>
                                             </div>
                                             <div class="col">
                                             <h3>Registration successful!</h3>
-                        <p>Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
-                           We will contact you once you are appointed to take the vaccine. Together we can do this.</p>
+                        <p>Your have succesfully registered for the vaccine. 
+                            Thank you for your co-operation in the works of curbing Covid-19<br>
+                           We will contact you once you are appointed to take the vaccine. 
+                           Together we can do this.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -133,28 +135,34 @@ fwrite($myfile, $txt."\n");
                     </div>
                 </div>
             </div>
-                            
+
           <br>
           <br>
           <br>
-     
+
         </main>
-                            
+
     </div>
 
     <div class="container-fluid">
         <div class="container">
-        
+
             <div class="card-body bg-quaternary">
-                    
+
                 <h5>Disclaimer</h5>
-                <p style="font-size:14px;">This website is created mainly for educational and non-commercial use only. It is a 
-                partial fulfillment for completion of unit SWE20001 - Development Project 1 offered in 
-                Swinburne University of Technology, Sarawak Campus. The web-master and author(s) do not 
-                represent the business entity. The content of the pages of this website might be out-dated 
-                or inaccurate, thus, the author(s) and web-master does not take any responsibility for 
+                <p style="font-size:14px;">This website is created mainly for educational and 
+                non-commercial use only. It is a
+                partial fulfillment for completion of unit SWE20001 - Development Project 
+                1 offered in
+                Swinburne University of Technology, 
+                Sarawak Campus. The web-master 
+                and author(s) do not
+                represent the business entity. 
+                The content of the pages of this website might be out-dated
+                or inaccurate, thus, the author(s) and web-master does not take any 
+                responsibility for
                 incorrect information disseminated or cited from this website.</p>
-                
+
             </div>
         </div>
     </div>
