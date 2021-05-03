@@ -58,7 +58,7 @@ for ($x = 2; $x <= sizeof($array_info); $x += 7) {
         $msg = "Registration successful";
         $msg2 = "Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
         We will contact you once you are appointed to take the vaccine. Together we can do this.";
-}
+    }
 }
 ?>
 <div class="container-fluid site-title">
