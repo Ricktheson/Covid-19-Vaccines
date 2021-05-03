@@ -20,12 +20,12 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input field
-    $first-name = $_POST['first-name'];
+    $fName = $_POST['first-name'];
 
-    $last-name = $_POST['last-name'];
-    $ic-number = $_POST['ic-number'];
+    $lName = $_POST['last-name'];
+    $icNo = $_POST['ic-number'];
 
-    $phone-number = $_POST['phone-number'];
+    $phoneNo = $_POST['phone-number'];
 
     $vaccines = $_POST['vaccines'];
 
@@ -34,14 +34,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     $myfile = fopen("registrationinfo.txt","w");
-    //$txt = $first-name . "\n" . $last-name. "\n" .$ic-number. "\n" .$phone-number."\n" .$vaccines+ "\n" . $comment."\n" .$consent;
-    $txt = $first-name;
+    //$txt = $fName . "\n" . $lName. "\n" .$icNo. "\n" .$phoneNo."\n" .$vaccines+ "\n" . $comment."\n" .$consent;
+    $txt = $fName;
     fwrite($myfile, $txt. "\n");
-    $txt = $last-name;
+    $txt = $lName;
     fwrite($myfile, $txt. "\n");
-    $txt = $ic-number;
+    $txt = $icNo;
     fwrite($myfile, $txt. "\n");
-    $txt = $phone-number;
+    $txt = $phoneNo;
     fwrite($myfile, $txt. "\n");
     $txt = $vaccines;
     fwrite($myfile, $txt. "\n");
