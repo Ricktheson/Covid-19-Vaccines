@@ -17,33 +17,32 @@
 
 <body>
 <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // collect value of input field
-        $fname = $_POST['fName'];                                                   
-        $lname = $_POST['lName'];
-        $icNo = $_POST['icNo'];                                          
-        $phoneNo = $_POST['phoneNo'];                                                       
-        $vaccines = $_POST['vaccines'];                                                     
-        $comment = $_POST['comments'];
-        $consent = $_POST['consent'];
-    } 
-    $file = fopen("registrationinfo.txt","r");
+    $fname = $_POST['fName'];
+    $lname = $_POST['lName'];
+    $icNo = $_POST['icNo'];
+    $phoneNo = $_POST['phoneNo'];
+    $vaccines = $_POST['vaccines'];
+    $comment = $_POST['comments'];
+    $consent = $_POST['consent'];
+}
+    $file = fopen("registrationinfo.txt" , "r");
     $array_info = array();
-                                  
-    while(! feof($file)) {
+
+while (! feof($file)) {
         array_push($array_info,(fgets($file)));
 
-    }
-              
+}
     fclose($file);
     $msg = "Registration Successful";
-    for ($x = 2 ; $x <= sizeof($array_info); $x+=7){
-        if ($icNo == $array_info[$x]){
-            $msg = "You have already registered, please wait for the vaccine";
-            $msg2 = "You have already registered to take the vaccine. Phases of vaccination are being implemented so please wait for your phase to get vaccinated";
-        }  
-    else{
-        $myfile = fopen( "registrationinfo.txt" , "a+" );
+    for ($x = 2; $x <= sizeof($array_info); $x += 7) {
+    if ($icNo == $array_info[$x]){
+        $msg = "You have already registered, please wait for the vaccine";
+        $msg2 = "You have already registered to take the vaccine. Phases of vaccination are being implemented so please wait for your phase to get vaccinated";
+    }
+    else {
+        $myfile = fopen("registrationinfo.txt", "a+");
         $txt = $fname;
         fwrite($myfile, $txt . "\n");
         $txt = $lname;
@@ -62,7 +61,7 @@
         $msg2 = "Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
         We will contact you once you are appointed to take the vaccine. Together we can do this.";
     }
-}
+    }
 ?>
 <div class="container-fluid site-title">
     <!-- <div class=""> -->
@@ -82,27 +81,32 @@
                   
                     <li class="nav-item" id="menu_home">
                         <a class="nav-link" href="home.html">
-                            Home				        </a>
+                        Home
+                        </a>
                     </li>
 
                     <li class="nav-item" id="menu1">
                         <a class="nav-link" href="page1.html">
-                            Pfizer						</a>
+                            Pfizer
+                        </a>
                     </li>
 
                     <li class="nav-item" id="menu2">
                         <a class="nav-link" href="page2.html">
-                            Sinovac						</a>
+                            Sinovac
+                        </a>
                     </li>
 
                     <li class="nav-item" id="menu3">
                         <a class="nav-link" href="page3.html">
-                            AstraZeneca					</a>
+                            AstraZeneca
+                        </a>
                     </li>
 
                     <li class="nav-item" id="menu4">
                         <a class="nav-link active" href="registration.html">
-                            Registration</a>
+                            Registration
+                        </a>
                     </li>
 
                 </ul>
@@ -134,9 +138,8 @@
                                                 </div>
                                             </div>
                                             <div class="col">
-                                             <h3><?php echo $msg ?></h3>
-						<p><?php echo $msg2?></p>
-                          
+                                               <h3><?php echo $msg ?></h3>
+                                               <p><?php echo $msg2 ?></p>
                                             </div>
                                             </div>
                                         </div>
@@ -146,14 +149,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-							
           <br>
           <br>
           <br>
      
         </main>
-    						
+
     </div>
 
     <div class="container-fluid">
