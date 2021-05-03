@@ -33,22 +33,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $consent = $_POST['consent'];
 
 
-    $myfile = fopen("registrationinfo.txt","w");
+    $myfile = fopen("registrationinfo.txt", "w");
     //$txt = $fName . "\n" . $lName. "\n" .$icNo. "\n" .$phoneNo."\n" .$vaccines+ "\n" . $comment."\n" .$consent;
     $txt = $fName;
-    fwrite($myfile, $txt. "\n");
+    fwrite($myfile, $txt . "\n");
     $txt = $lName;
-    fwrite($myfile, $txt. "\n");
+    fwrite($myfile, $txt . "\n");
     $txt = $icNo;
-    fwrite($myfile, $txt. "\n");
+    fwrite($myfile, $txt . "\n");
     $txt = $phoneNo;
-    fwrite($myfile, $txt. "\n");
+    fwrite($myfile, $txt . "\n");
     $txt = $vaccines;
-    fwrite($myfile, $txt. "\n");
+    fwrite($myfile, $txt . "\n");
     $txt = $comment;
-    fwrite($myfile, $txt. "\n");
+    fwrite($myfile, $txt . "\n");
     $txt = $consent;
-    fwrite($myfile, $txt. "\n");
+    fwrite($myfile, $txt . "\n");
 }
 ?>
 <div class="container-fluid site-title">
@@ -69,27 +69,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <li class="nav-item" id="menu-home">
                         <a class="nav-link" href="home.html">
-                            Home				        </a>
+                            Home</a>
                     </li>
 
                     <li class="nav-item" id="menu1">
                         <a class="nav-link" href="page1.html">
-                            Pfizer						</a>
+                            Pfizer</a>
                     </li>
 
                     <li class="nav-item" id="menu2">
                         <a class="nav-link" href="page2.html">
-                            Sinovac						</a>
+                            Sinovac</a>
                     </li>
 
                     <li class="nav-item" id="menu3">
                         <a class="nav-link" href="page3.html">
-                            AstraZeneca					</a>
+                            AstraZeneca</a>
                     </li>
 
                     <li class="nav-item" id="menu4">
                         <a class="nav-link active" href="registration.html">
-                            Registration				</a>
+                            Registration</a>
                     </li>
 
                 </ul>
