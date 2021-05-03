@@ -3,13 +3,12 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta charset="utf-8">
-    
+    <meta charset="utf-8">
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="home_files/bootstrap.css">
     <link rel="stylesheet" href="home_files/app.css">
        
-	<title>Home | COVID-19 Info Center</title>
+    <title>Home | COVID-19 Info Center</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="description" content="COVID-19 vaccine homepage">
@@ -18,56 +17,47 @@
 
 <body>
 <?php
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
-// collect value of input field
- $fname = $_POST['fName'];
-                                                       
-$lname = $_POST['lName'];
-$icNo = $_POST['icNo'];
-                                                      
-$phoneNo = $_POST['phoneNo'];
-                                                       
-$vaccines = $_POST['vaccines'];
-                                                      
-$comment = $_POST['comments'];
-$consent = $_POST['consent'];
-                              }
-$file = fopen("registrationinfo.txt","r");
-$array_info = array();
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // collect value of input field
+        $fname = $_POST['fName'];                                                   
+        $lname = $_POST['lName'];
+        $icNo = $_POST['icNo'];                                          
+        $phoneNo = $_POST['phoneNo'];                                                       
+        $vaccines = $_POST['vaccines'];                                                     
+        $comment = $_POST['comments'];
+        $consent = $_POST['consent'];
+    } 
+    $file = fopen("registrationinfo.txt","r");
+    $array_info = array();
                                   
-while(! feof($file)) {
- array_push($array_info,(fgets($file)));
+    while(! feof($file)) {
+        array_push($array_info,(fgets($file)));
 
- }
-                      
-fclose($file);
-
-    $msg = "Registration Successful";
-
-for ($x = 2 ; $x <= sizeof($array_info); $x+=7){
-    
-    if($icNo == $array_info[$x]){
-
-        $msg = "You have already registered, please wait for the vaccine";
-        $msg2 = "You have already registered to take the vaccine. Phases of vaccination are being implemented so please wait for your phase to get vaccinated";
     }
-    
+              
+    fclose($file);
+    $msg = "Registration Successful";
+    for ($x = 2 ; $x <= sizeof($array_info); $x+=7){
+        if ($icNo == $array_info[$x]){
+            $msg = "You have already registered, please wait for the vaccine";
+            $msg2 = "You have already registered to take the vaccine. Phases of vaccination are being implemented so please wait for your phase to get vaccinated";
+        }  
     else{
-        $myfile = fopen("registrationinfo.txt","a+");
+        $myfile = fopen( "registrationinfo.txt" , "a+" );
         $txt = $fname;
-        fwrite($myfile, $txt."\n");
+        fwrite($myfile, $txt . "\n");
         $txt = $lname;
-        fwrite($myfile, $txt."\n");
+        fwrite($myfile, $txt . "\n");
         $txt = $icNo;
-        fwrite($myfile, $txt."\n");
+        fwrite($myfile, $txt . "\n");
         $txt = $phoneNo;
-        fwrite($myfile, $txt."\n");
+        fwrite($myfile, $txt . "\n");
         $txt = $vaccines;
-        fwrite($myfile, $txt."\n");
+        fwrite($myfile, $txt . "\n");
         $txt = $comment;
-        fwrite($myfile, $txt."\n");
+        fwrite($myfile, $txt . "\n");
         $txt = $consent;
-        fwrite($myfile, $txt."\n");
+        fwrite($myfile, $txt . "\n");
         $msg = "Registration successful";
         $msg2 = "Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
         We will contact you once you are appointed to take the vaccine. Together we can do this.";
