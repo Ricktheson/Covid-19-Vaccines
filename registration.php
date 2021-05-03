@@ -35,12 +35,12 @@ while (! feof($file)) {
 }
     fclose($file);
     $msg = "Registration Successful";
-    for ($x = 2; $x <= sizeof($array_info); $x += 7) {
-if ($icNo == $array_info[$x]) {
+for ($x = 2; $x <= sizeof($array_info); $x += 7) {
+    if ($icNo == $array_info[$x]) {
         $msg = "You have already registered, please wait for the vaccine" ;
         $msg2 = "You have already registered to take the vaccine. Phases of vaccination are being implemented so please wait for your phase to get vaccinated";
-    }
-    else { $myfile = fopen("registrationinfo.txt", "a+");
+} else { 
+        $myfile = fopen("registrationinfo.txt", "a+");
         $txt = $fname;
         fwrite($myfile, $txt . "\n");
         $txt = $lname;
