@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="description" content="COVID-19 vaccine homepage">
-    <meta name="keywords" content="COVID-19, homepage">	
+    <meta name="keywords" content="COVID-19, homepage">
 </head>
 
 <body>
@@ -27,22 +27,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comment = $_POST['comments'];
     $consent = $_POST['consent'];
 }
-    $file = fopen("registrationinfo.txt" , "r");
+    $file = fopen("registrationinfo.txt", "r");
     $array_info = array();
 
 while (! feof($file)) {
-        array_push($array_info,(fgets($file)));
-
+        array_push($array_info, (fgets($file)));
 }
     fclose($file);
     $msg = "Registration Successful";
     for ($x = 2; $x <= sizeof($array_info); $x += 7) {
-    if ($icNo == $array_info[$x]){
-        $msg = "You have already registered, please wait for the vaccine";
+if ($icNo == $array_info[$x]) {
+        $msg = "You have already registered, please wait for the vaccine" ;
         $msg2 = "You have already registered to take the vaccine. Phases of vaccination are being implemented so please wait for your phase to get vaccinated";
     }
-    else {
-        $myfile = fopen("registrationinfo.txt", "a+");
+    else { $myfile = fopen("registrationinfo.txt", "a+");
         $txt = $fname;
         fwrite($myfile, $txt . "\n");
         $txt = $lname;
@@ -61,7 +59,7 @@ while (! feof($file)) {
         $msg2 = "Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
         We will contact you once you are appointed to take the vaccine. Together we can do this.";
     }
-    }
+}
 ?>
 <div class="container-fluid site-title">
     <!-- <div class=""> -->
@@ -123,7 +121,7 @@ while (! feof($file)) {
             <div class="row">
             
                 <div class="col content">
-                    <div class="cdc-2020-bar container">							
+                    <div class="cdc-2020-bar container">
                     </div>
                  
                     <div class="syndicate">
