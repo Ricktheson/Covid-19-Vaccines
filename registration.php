@@ -3,13 +3,13 @@
 
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-	<meta charset="utf-8">
+    <meta charset="utf-8">
     
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="stylesheet" href="home_files/bootstrap.css">
     <link rel="stylesheet" href="home_files/app.css">
        
-	<title>Home | COVID-19 Info Center</title>
+    <title>Home | COVID-19 Info Center</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="description" content="COVID-19 vaccine homepage">
@@ -20,8 +20,8 @@
 <?php
  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 // collect value of input field
- $fname = $_POST['fName'];
-                                                       
+$fname = $_POST['fName'];
+
 $lname = $_POST['lName'];
 $icNo = $_POST['icNo'];
                                                       
@@ -49,7 +49,7 @@ $txt = $comment;
 fwrite($myfile, $txt."\n");
 $txt = $consent;
 fwrite($myfile, $txt."\n");
-                                  }
+}
 ?>
 <div class="container-fluid site-title">
     <!-- <div class=""> -->
@@ -67,7 +67,7 @@ fwrite($myfile, $txt."\n");
             
                 <ul class="nav navbar-nav nav-justified w-100">
                   
-                    <li class="nav-item" id="menu_home">
+                    <li class="nav-item" id="menu-home">
                         <a class="nav-link" href="home.html">
                             Home				        </a>
                     </li>
@@ -122,8 +122,8 @@ fwrite($myfile, $txt."\n");
                                             </div>
                                             <div class="col">
                                             <h3>Registration successful!</h3>
-						<p>Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
-						   We will contact you once you are appointed to take the vaccine. Together we can do this.</p>
+                        <p>Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
+                           We will contact you once you are appointed to take the vaccine. Together we can do this.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -133,13 +133,13 @@ fwrite($myfile, $txt."\n");
                     </div>
                 </div>
             </div>
-							
+                            
           <br>
           <br>
           <br>
      
         </main>
-    						
+                            
     </div>
 
     <div class="container-fluid">
