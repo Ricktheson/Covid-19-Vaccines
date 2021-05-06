@@ -46,32 +46,33 @@
     for ($x = 2 ; $x <= sizeof($array_info); $x+=7){
     
         if($icNo == $array_info[$x]){
-    
-            $msg = "You have already registered, please wait for the vaccine";
+            $registerAlready = true;
+            $msg = "Registration Failed";
             $msg2 = "You have already registered to take the vaccine. Phases of vaccination are being implemented so please wait for your phase to get vaccinated";
             break;
         }
-    
         else{
-            $myfile = fopen("registrationinfo.txt","a+");
-            $txt = $fname;
-            fwrite($myfile, $txt."\n");
-            $txt = $lname;
-            fwrite($myfile, $txt."\n");
-            $txt = $icNo;
-            fwrite($myfile, $txt."\n");
-            $txt = $phoneNo;
-            fwrite($myfile, $txt."\n");
-            $txt = $vaccines;
-            fwrite($myfile, $txt."\n");
-            $txt = $comment;
-            fwrite($myfile, $txt."\n");
-            $txt = $consent;
-            fwrite($myfile, $txt."\n");
+            $registerAlready = false;
             $msg2 = "Your have succesfully registered for the vaccine. Thank you for your co-operation in the works of curbing Covid-19<br>
-            We will contact you once you are appointed to take the vaccine. Together we can do this.";
-            break;
+        We will contact you once you are appointed to take the vaccine. Together we can do this.";
         }
+    }
+    if(!$registerAlready){
+        $myfile = fopen("registrationinfo.txt","a+");
+        $txt = $fname;
+        fwrite($myfile, $txt."\n");
+        $txt = $lname;
+        fwrite($myfile, $txt."\n");
+        $txt = $icNo;
+        fwrite($myfile, $txt."\n");
+        $txt = $phoneNo;
+        fwrite($myfile, $txt."\n");
+        $txt = $vaccines;
+        fwrite($myfile, $txt."\n");
+        $txt = $comment;
+        fwrite($myfile, $txt."\n");
+        $txt = $consent;
+        fwrite($myfile, $txt."\n");
     }
 ?>
 <div class="container-fluid site-title">
